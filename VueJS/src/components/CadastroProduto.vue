@@ -15,8 +15,9 @@
     <div class="row justify-content-center space-top">
       <form class="formulario"> 
         <div>
-          <label>Nome do Produto</label>  
-          <input type="text" v-model="produto.nome" class="form-control">  
+          <label>Nome do Produto</label>
+              <b-form-textarea v-model="produto.nome" class="form-control" placeholder="Descrição do Produto..."
+                rows="3" max-rows="4" ></b-form-textarea>            
         </div>
         <div class="space-top">
           <label>Unidade de Medida</label>  
@@ -27,15 +28,8 @@
           <input type="number" v-model="produto.quantidade" class="form-control">  
         </div>
         <div class="space-top">
-          <label>Produto Perecível?</label>  
-            <b-form-group>
-              <b-form-radio-group
-              id="radio-group"
-              v-model="produto.perecivel"
-              :options="options"
-              name="radio-options">
-              </b-form-radio-group>
-            </b-form-group> 
+          <label>Produto Perecível?</label>
+          <b-form-select v-model="produto.perecivel" :options="options" size="sm" class="mt-3"></b-form-select>  
         </div>
         <div class="space-top">
           <button type="button" @click="enviarCadastroProduto(produto)" class="btn btn-outline-light btn-sm">Cadastrar</button>           
